@@ -1,4 +1,4 @@
-# vabert 1.0.0
+# vabert 1.0.1
 
 Extracts visual acuity (VA) readings from UK ophthalmology clinic letters. For each reading it reports the value, the eye, the measurement method and the notation, and it commits an eye or method only when the letter states it. Everything needed to run it (code, model, thresholds) is in this folder; nothing is downloaded at run time.
 
@@ -14,9 +14,35 @@ For each reading, three fields:
 
 A field is committed only when the model is confident and a rule-based check of the text agrees. `Unk` means the letter doesn't state it, which is a final answer. `Review` means the pipeline isn't sure and a person should check; the model's own answer is still reported. Each letter gets a status: `complete`, `complete_with_unk`, `needs_review` or `no_va`.
 
+## Get the code and model
+
+The model weights (`model/pytorch_model.bin`, about 430 MB) are stored with [Git LFS](https://git-lfs.com), so install Git LFS before cloning:
+
+```
+# once per machine; pick the line for your system
+sudo apt install git-lfs        # Debian / Ubuntu
+brew install git-lfs            # macOS
+#   Windows: Git for Windows includes it; otherwise download from https://git-lfs.com
+git lfs install                 # once per user account
+
+git clone https://github.com/qnguy3n/vabert.git
+cd vabert
+git checkout v1.0.1             # optional: a tagged release
+```
+
+If the repository was cloned before Git LFS was installed, `model/pytorch_model.bin` is a small text pointer (about 130 bytes) instead of the weights. Fetch the real file from inside the folder:
+
+```
+git lfs install
+git lfs pull
+ls -lh model/pytorch_model.bin   # should be about 414 MB
+```
+
+vabert detects a pointer file and stops with a message saying to run `git lfs pull`.
+
 ## Install
 
-From this folder, into the Python environment you want to use (Python 3.9+, PyTorch and transformers):
+From the cloned folder, into the Python environment you want to use (Python 3.9+, PyTorch and transformers):
 
 ```
 pip install -e .

@@ -2,6 +2,16 @@
 
 All notable changes to vabert are recorded here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.0.1] - 2026-10-27
+
+### Added
+
+- README section on getting the code and model: installing Git LFS, cloning, and `git lfs pull` when the weights arrive as a pointer file.
+
+### Fixed
+
+- A clone made without Git LFS leaves a pointer file in place of `model/pytorch_model.bin`; loading it gave a misleading PyTorch unpickling error. vabert now stops with a message saying to install Git LFS and run `git lfs pull`.
+
 ## [1.0.0] - 2026-10-27
 
 First official release.

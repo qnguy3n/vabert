@@ -10,5 +10,5 @@ Command line: `vabert --help` (or `python -m vabert --help`).
 from .pipeline import VABERTPipeline
 from .inference import FIELDS
 
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 __all__ = ['VABERTPipeline', 'FIELDS', '__version__']

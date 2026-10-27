@@ -37,8 +37,13 @@ RELEASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 class VABERTPipeline:
     def __init__(self, model_dir=None, device=None, thresholds=None):
         model_dir = model_dir or os.environ.get('VABERT_MODEL_DIR') or os.path.join(RELEASE_DIR, 'model')
-        if not os.path.exists(os.path.join(model_dir, 'pytorch_model.bin')):
+        weights = os.path.join(model_dir, 'pytorch_model.bin')
+        if not os.path.exists(weights):
             raise FileNotFoundError(f"no checkpoint in {model_dir}; pass model_dir= or set VABERT_MODEL_DIR")
+        with open(weights, 'rb') as f:
+            if f.read(40).startswith(b'version https://git-lfs'):
+                raise RuntimeError(f"{weights} is a Git LFS pointer, not the model weights: install Git LFS "
+                                   "(https://git-lfs.com), then run `git lfs install` and `git lfs pull` in the repository")
         self.model = VAModel(model_dir, device=device)
         if thresholds is None:
             path = os.environ.get('VABERT_THRESHOLDS') or os.path.join(RELEASE_DIR, 'thresholds.json')
