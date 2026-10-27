@@ -1,4 +1,6 @@
-# vabert 1.0.1
+# vabert
+
+[![version](https://img.shields.io/github/v/tag/qnguy3n/vabert?sort=semver&label=version)](https://github.com/qnguy3n/vabert/tags)
 
 Extracts visual acuity (VA) readings from UK ophthalmology clinic letters. For each reading it reports the value, the eye, the measurement method and the notation, and it commits an eye or method only when the letter states it. Everything needed to run it (code, model, thresholds) is in this folder; nothing is downloaded at run time.
 
