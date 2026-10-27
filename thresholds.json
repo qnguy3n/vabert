@@ -1,0 +1,8 @@
+{
+  "tau": {
+    "lat": 0.943,
+    "method": 0.985,
+    "notation": 0.644
+  },
+  "note": "per-field confidence thresholds, calibrated on held-out validation letters for 99.5% committed precision; a field is committed only if confidence >= tau AND the evidence check agrees"
+}

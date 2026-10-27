@@ -1,0 +1,34 @@
+{
+  "model_name": "dmis-lab/biobert-base-cased-v1.2",
+  "heads": {
+    "span": [
+      "O",
+      "B",
+      "I"
+    ],
+    "lat": [
+      "Right",
+      "Left",
+      "Both",
+      "Unk"
+    ],
+    "method": [
+      "Aided",
+      "Unaided",
+      "AidedPH",
+      "UnaidedPH",
+      "UnkPH",
+      "Unk"
+    ],
+    "notation": [
+      "snellen_m",
+      "snellen_ft",
+      "qualitative",
+      "etdrs",
+      "logmar",
+      "decimal",
+      "thomson",
+      "Unk"
+    ]
+  }
+}

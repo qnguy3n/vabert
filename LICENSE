@@ -1,0 +1,24 @@
+Copyright (c) 2026 the vabert authors. All rights reserved.
+
+This software, including its source code, model weights, thresholds,
+documentation and example notebook (together, "the Software"), is
+proprietary. No licence is granted to use, copy, modify, merge, publish,
+distribute, sublicense or sell the Software, in whole or in part, except
+with the prior written permission of the copyright holders.
+
+The model weights were trained on clinical letters. Any use of the
+Software is also subject to the data-governance and information-governance
+terms under which that data was made available.
+
+The model is built on the BioBERT base model (dmis-lab/biobert-base-cased-v1.2),
+which is distributed by its authors under its own licence terms; those
+terms apply to that component.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE. THE SOFTWARE IS NOT A MEDICAL DEVICE AND MUST NOT
+BE USED AS THE SOLE BASIS FOR CLINICAL DECISIONS.

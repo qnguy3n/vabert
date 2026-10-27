@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vabert"
+version = "1.0.0"
+description = "Visual acuity extraction from UK ophthalmology clinic letters"
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = ["License :: Other/Proprietary License", "Private :: Do Not Upload"]
+requires-python = ">=3.9"
+dependencies = ["torch>=2.0", "transformers>=4.40"]
+
+[project.scripts]
+vabert = "vabert.__main__:main"
+
+[tool.setuptools]
+packages = ["vabert"]
